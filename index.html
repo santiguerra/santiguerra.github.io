@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+let Numberr = "Algo"
+<html lang="en">
+   <head>
+     <title>Challenge</title>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecutar JS</title>
+    <script src="Trabajo.js" defer></script>
+   </head>
+
+   <body>ç
+    <h1>// Solicitar la frase al usuario
+      let frase = prompt("Ingresa una frase:");
+      
+      // Dividir la frase en palabras
+      let palabras = frase.split(" ");
+      
+      // Calcular la cantidad de palabras
+      let cantidadPalabras = palabras.length;
+      
+      // Encontrar la palabra más larga
+      let palabraMasLarga = palabras.reduce((larga, actual) => {
+        return actual.length > larga.length ? actual : larga;
+      }, "");
+      
+      // Solicitar una palabra para buscar
+      let palabraBuscar = prompt("¿Qué palabra quieres buscar?");
+      let coincidencias = frase.match(new RegExp(`\\b${palabraBuscar}\\b`, "gi"));
+      let repeticionesDeBusqueda = coincidencias ? coincidencias.length : 0;
+      
+      // Extraer las primeras 3 palabras
+      let primerasTresPalabras = palabras.slice(0, 3);
+      
+      // Crear un objeto con la información
+      let resultado = {
+        fraseOriginal: frase,
+        totalPalabras: cantidadPalabras,
+        palabraMasLarga: palabraMasLarga,
+        repeticionesDeBusqueda: repeticionesDeBusqueda,
+      };
+      
+      // Mostrar los resultados
+      console.log("Cantidad de palabras:", cantidadPalabras);
+      console.log("Palabra más larga:", palabraMasLarga);
+      console.log(
+        `La palabra "${palabraBuscar}" aparece ${repeticionesDeBusqueda} ${
+          repeticionesDeBusqueda === 1 ? "vez" : "veces"
+        }.`
+      );
+      console.log("Primeras 3 palabras:", primerasTresPalabras);
+      console.log("Objeto generado:", resultado);
+      </h1>
+     <button onclick="alert('Porque asi es el')">¿porque?</button>
+   </body>
+</html>
+
+
+
+
+
